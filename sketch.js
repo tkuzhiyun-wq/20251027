@@ -25,6 +25,14 @@ function draw() {
 	if (frameCount % (random([10, 60, 120])) == 0) {
 		addObjs();
 	}
+
+	// 在畫布中間顯示文字「淡江大學」
+	push();
+	textAlign(CENTER, CENTER);
+	textSize(minSide * 0.1);
+	fill(255);
+	text('淡江大學', width / 2, height / 2);
+	pop();
 }
 
 function windowResized() {
