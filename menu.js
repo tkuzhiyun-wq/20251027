@@ -40,6 +40,10 @@ menu.addEventListener('click', (evt) => {
       openIframe('https://hackmd.io/@KsqNQqBTRk6MdWHQEubr9A/ryEhU70igx');
     } else if (linkText === '測驗系統') {
       openIframe('https://tkuzhiyun-wq.github.io/202511031103/');
+    } else if (linkText === '測驗卷筆記') {
+      openIframe('https://hackmd.io/@KsqNQqBTRk6MdWHQEubr9A/S1WO1c4gbl');
+    } else if (linkText === '作品筆記') {
+      openIframe('https://hackmd.io/@KsqNQqBTRk6MdWHQEubr9A/S1WO1c4gbl');
     } else if (linkText === '回到首頁') {
       // TODO: 若需要可加入其他 URL
       console.log('回到首頁');
