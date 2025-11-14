@@ -51,10 +51,34 @@ canvas {
   display: inline-block;
 }
 
+/* 子選單樣式 */
+#side-menu li.has-submenu {
+  position: relative;
+}
+
+#side-menu .submenu {
+  display: none; /* 預設隱藏 */
+  margin: 8px 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+/* 滑鼠懸停或 li 加上 .open 時顯示子選單（支援觸控切換） */
+#side-menu li.has-submenu:hover > .submenu,
+#side-menu li.has-submenu.open > .submenu {
+  display: block;
+}
+
+#side-menu .submenu a {
+  font-size: 24px;
+  color: #ddd;
+}
+
 /* 小螢幕調整：若需要可縮短選單寬度 */
 @media (max-width: 400px) {
   #side-menu { width: 240px; }
   #side-menu a { font-size: 28px; }
+  #side-menu .submenu a { font-size: 22px; }
 }
 
 /* iframe 彈窗樣式 */
