@@ -39,8 +39,7 @@ menu.addEventListener('click', (evt) => {
     } else if (linkText === '第一單元講義') {
       openIframe('https://hackmd.io/@KsqNQqBTRk6MdWHQEubr9A/ryEhU70igx');
     } else if (linkText === '測驗系統') {
-      // TODO: 若需要可加入其他 URL
-      console.log('測驗系統');
+      openIframe('https://tkuzhiyun-wq.github.io/202511031103/');
     } else if (linkText === '回到首頁') {
       // TODO: 若需要可加入其他 URL
       console.log('回到首頁');
