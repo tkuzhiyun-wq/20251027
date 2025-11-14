@@ -34,6 +34,7 @@ menu.addEventListener('click', (evt) => {
     const linkText = evt.target.textContent.trim();
     
     // 根據點擊的選項開啟相應內容
+    let shouldClose = true; // 預設點擊後關閉選單，對有子選單的項目例外
     if (linkText === '第一單元作品') {
       openIframe('https://tkuzhiyun-wq.github.io/20251020/');
     } else if (linkText === '第一單元講義') {
@@ -44,14 +45,26 @@ menu.addEventListener('click', (evt) => {
       openIframe('https://hackmd.io/@KsqNQqBTRk6MdWHQEubr9A/S1WO1c4gbl');
     } else if (linkText === '作品筆記') {
       openIframe('https://hackmd.io/@KsqNQqBTRk6MdWHQEubr9A/S1WO1c4gbl');
+    } else if (linkText === '淡江大學') {
+      // 淡江大學有子選單：在桌面會靠 hover 顯示；在觸控裝置上切換 .open 以顯示子選單
+      const parentLi = evt.target.closest('li.has-submenu');
+      if (parentLi) {
+        parentLi.classList.toggle('open');
+      }
+      shouldClose = false; // 不關閉整個側邊選單，讓使用者選擇子項
+    } else if (linkText === '教育科技學系') {
+      // 子選單項目：開啟教育科技學系（淡江）
+      openIframe('https://www.et.tku.edu.tw/');
     } else if (linkText === '回到首頁') {
       // TODO: 若需要可加入其他 URL
       console.log('回到首頁');
     }
-    
-    // 選單項點擊後關閉
-    menu.classList.remove('open');
-    menu.setAttribute('aria-hidden', 'true');
+
+    // 只有在需要時才關閉選單（點擊淡江大學父項不會關閉）
+    if (shouldClose) {
+      menu.classList.remove('open');
+      menu.setAttribute('aria-hidden', 'true');
+    }
   }
 });
 
